@@ -3,319 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buzón Escolar 3D - Proyecto PAI</title>
+    <title>Arte en Acción</title>
     <style>
-        :root {
-            --bg-main: #0b0f19;
-            --card-bg: rgba(22, 30, 46, 0.85);
-            --accent-blue: #00d2ff;
-            --accent-purple: #7928ca;
-            --text-color: #f1f5f9;
-            --border-color: rgba(0, 210, 255, 0.2);
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-main);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(121, 40, 202, 0.15) 0%, transparent 40%);
-            color: var(--text-color);
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* --- MENÚ SUPERIOR CON DESPLEGABLES --- */
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 10px 20px;
+        body {
+            background-color: #fcfbf9;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropbtn {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
-            padding: 10px 18px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .dropbtn:hover {
-            background: var(--accent-blue);
-            color: #000;
-            box-shadow: 0 0 12px rgba(0, 210, 255, 0.5);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #161e2e;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .dropdown-content a {
-            color: var(--text-color);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 13px;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(0, 210, 255, 0.2);
-            color: var(--accent-blue);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* --- LAYOUT PRINCIPAL CON PANEL LATERAL --- */
-        .wrapper {
-            display: flex;
-            max-width: 1200px;
-            margin: 30px auto;
-            gap: 25px;
-            padding: 0 20px;
-        }
-
-        /* PANEL LATERAL DE CONFIGURACIÓN */
-        .sidebar {
-            width: 260px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
-
-        .sidebar h3 {
-            margin-top: 0;
-            font-size: 16px;
-            color: var(--accent-blue);
-            display: flex;
             align-items: center;
-            gap: 8px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .preview-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .preview-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 15px;
+        /* TÍTULO PRINCIPAL CENTRADO */
+        .title-container {
             text-align: center;
-            font-size: 24px;
-            cursor: pointer;
-            transition: 0.3s;
+            z-index: 10;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .preview-box:hover {
-            border-color: var(--accent-blue);
-            transform: scale(1.05);
-        }
-
-        /* CONTENIDO PRINCIPAL */
-        .main-content {
-            flex: 1;
-        }
-
-        .header-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header-title h1 {
-            margin: 0;
-            font-size: 2.2em;
-            background: linear-gradient(90deg, #00d2ff, #0072ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* LOGO INCLINADO */
-        .xaloc-logo {
-            font-size: 2.5em;
+        .title-container h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            color: #000000;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            line-height: 1.1;
             font-weight: 900;
-            font-style: italic;
-            color: #ffffff;
-            letter-spacing: -2px;
-            transform: rotate(-8deg);
-            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255,255,255,0.2);
-            border: 2px dashed rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 10px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        /* CUADROS EN LAS ESQUINAS */
+        .art-frame {
+            position: absolute;
+            border: 8px solid #3a2a1d;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            background: #fff;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: float 4s ease-in-out infinite alternate;
         }
 
-        h2 {
-            color: var(--accent-blue);
-            margin-top: 0;
+        .art-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
-        /* ELEMENTOS ARTÍSTICOS CIBERNÉTICOS */
-        .art-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 15px;
+        .art-frame:hover {
+            transform: scale(1.08) rotate(0deg) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 20;
         }
 
-        .art-card {
-            background: linear-gradient(135deg, rgba(0,210,255,0.05), rgba(121,40,202,0.1));
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
+        /* 1. Esquina superior izquierda */
+        .top-left {
+            top: 5%;
+            left: 3%;
+            width: 220px;
+            height: 180px;
+            transform: rotate(-15deg);
+            border-color: #8b5a2b;
         }
 
-        .art-card h4 {
-            margin: 5px 0;
-            color: #f43f5e;
+        /* 2. Esquina superior derecha */
+        .top-right {
+            top: 5%;
+            right: 3%;
+            width: 260px;
+            height: 200px;
+            transform: rotate(12deg);
+            border-color: #d4af37;
+            animation-delay: 1s;
+        }
+
+        /* 3. Esquina inferior izquierda (Mona Lisa) */
+        .bottom-left {
+            bottom: -2%;
+            left: 2%;
+            width: 180px;
+            height: 240px;
+            transform: rotate(-10deg);
+            border: 4px solid #1a1a1a;
+            animation-delay: 2s;
+        }
+
+        /* 4. Esquina inferior derecha (Chica de la perla) */
+        .bottom-right {
+            bottom: -2%;
+            right: 2%;
+            width: 200px;
+            height: 260px;
+            transform: rotate(14deg);
+            border-color: #c5a059;
+            animation-delay: 1.5s;
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { translateY(0px); }
+            100% { translateY(-10px); }
+        }
+
+        /* Adaptación para móviles */
+        @media (max-width: 768px) {
+            .art-frame {
+                width: 120px !important;
+                height: 140px !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR DESPLEGABLE -->
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn">Diseño 3D ▼</button>
-            <div class="dropdown-content">
-                <a href="#">Modelado CAD</a>
-                <a href="#">Medidas (220mm)</a>
-                <a href="#">Despiece Modular</a>
-            </div>
-        </div>
+    <!-- CUADRO ARRIBA IZQUIERDA -->
+    <div class="art-frame top-left">
+        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500" alt="Arte Expresionista">
+    </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Impresión ▼</button>
-            <div class="dropdown-content">
-                <a href="#">Ajustes PETG</a>
-                <a href="#">Klipper Dashboard</a>
-                <a href="#">Slicing Diagonal</a>
-            </div>
-        </div>
+    <!-- CUADRO ARRIBA DERECHA -->
+    <div class="art-frame top-right">
+        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500" alt="Paisaje Artístico">
+    </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Montaje ▼</button>
-            <div class="dropdown-content">
-                <a href="#">Cianocrilato + Bicarbonato</a>
-                <a href="#">Unión de Paneles</a>
-                <a href="#">Pruebas de Carga</a>
-            </div>
-        </div>
+    <!-- TÍTULO CENTRADO EXACTO -->
+    <div class="title-container">
+        <h1>ARTE<br>EN ACCIÓN</h1>
+    </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Sugerencias ▼</button>
-            <div class="dropdown-content">
-                <a href="#">Enviar Mensaje</a>
-                <a href="#">Buzón Digital</a>
-            </div>
-        </div>
-    </nav>
+    <!-- CUADRO ABAJO IZQUIERDA (MONA LISA) -->
+    <div class="art-frame bottom-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/405px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Mona Lisa">
+    </div>
 
-    <!-- CUERPO CON SIDEBAR Y CONTENIDO -->
-    <div class="wrapper">
-        
-        <!-- SIDEBAR DE CONFIGURACIÓN Y VISTAS -->
-        <div class="sidebar">
-            <h3>⚙️ Configuración</h3>
-            <p style="font-size: 12px; color: #94a3b8;">Selecciona la vista del prototipo:</p>
-            <div class="preview-grid">
-                <div class="preview-box">📦</div>
-                <div class="preview-box">📐</div>
-                <div class="preview-box">🧩</div>
-                <div class="preview-box">⚙️</div>
-            </div>
-        </div>
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-content">
-            
-            <!-- HEADER CON LOGO INCLINADO DE XALOC -->
-            <div class="header-box">
-                <div class="header-title">
-                    <h1>📦 Proyecto Buzón Escolar 3D</h1>
-                    <p style="margin: 5px 0 0 0; color: #94a3b8;">Diseño modular en PETG • Proyecto PAI</p>
-                </div>
-                <div class="xaloc-logo">
-                    XALOC
-                </div>
-            </div>
-
-            <!-- SOBRE EL PROYECTO -->
-            <div class="card">
-                <h2>💡 ¿En qué consiste este proyecto?</h2>
-                <p>Este proyecto consiste en el diseño y fabricación de un buzón/caja de recolección resistente para el colegio. Para superar los límites de tamaño de la impresora 3D, hemos diseñado un sistema modular de 4 paneles optimizados.</p>
-            </div>
-
-            <!-- CUADROS DE ARTE Y ESPECIFICACIONES -->
-            <div class="card">
-                <h2>⚙️ Detalles de Fabricación</h2>
-                <div class="art-grid">
-                    <div class="art-card">
-                        <h4>Material</h4>
-                        <p style="font-size: 13px;">PETG resistente e impreso a 80°C en cama.</p>
-                    </div>
-                    <div class="art-card">
-                        <h4>Estrategia</h4>
-                        <p style="font-size: 13px;">División en 4 partes e impresión en diagonal.</p>
-                    </div>
-                    <div class="art-card">
-                        <h4>Unión</h4>
-                        <p style="font-size: 13px;">Super Glue reforzado con bicarbonato.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <!-- CUADRO ABAJO DERECHA (LA JOVEN DE LA PERLA) -->
+    <div class="art-frame bottom-right">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/400px-1665_Girl_with_a_Pearl_Earring.jpg" alt="La joven de la perla">
     </div>
 
 </body>
