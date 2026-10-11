@@ -212,6 +212,42 @@
         .foto-izquierda { left: 35px; }
         .foto-derecha { right: 35px; }
 
+        /* --- ANIMACIÓN MANO SALUDANDO Y BRILLI-BRILLI --- */
+        .hand-wave {
+            display: inline-block;
+            animation: waveAnimation 1.2s infinite;
+            transform-origin: 70% 70%;
+        }
+
+        @keyframes waveAnimation {
+            0% { transform: rotate(0deg); }
+            20% { transform: rotate(14deg); }
+            40% { transform: rotate(-8deg); }
+            60% { transform: rotate(14deg); }
+            80% { transform: rotate(-4deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .sparkle-card {
+            position: relative;
+            border: 2px solid #ffd700 !important;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 0 8px 25px rgba(0,0,0,0.15) !important;
+        }
+
+        .sparkle-card::after {
+            content: "✨";
+            position: absolute;
+            top: -12px;
+            right: -10px;
+            font-size: 24px;
+            animation: sparkleAnim 1.5s infinite alternate;
+        }
+
+        @keyframes sparkleAnim {
+            0% { transform: scale(0.8) rotate(0deg); opacity: 0.6; }
+            100% { transform: scale(1.2) rotate(20deg); opacity: 1; }
+        }
+
         /* --- CONTENEDORES --- */
         .content-container {
             max-width: 1100px;
@@ -454,7 +490,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* Ocultar fotos laterales en pantallas pequeñas para que no molesten en móviles */
         @media (max-width: 1250px) {
             .foto-lateral {
                 display: none;
@@ -514,21 +549,22 @@
         <div class="art-frame bottom-right"><img src="images (3).jpg" alt="Cuadro 4"></div>
     </section>
 
-    <!-- FOTOS LATERALES FLOTANTES (Se ven al hacer scroll en ordenadores) -->
+    <!-- FOTOS LATERALES FLOTANTES -->
     <div class="foto-lateral foto-izquierda" style="top: 130vh;">
-        <img src="WhatsApp Image 2026-10-11 at 22.44.56.jpeg" alt="Imprimiendo buzones">
+        <img src="WhatsApp%20Image%202026-10-11%20at%2022.44.56.jpeg" alt="Imprimiendo buzones">
         <p>🖨️ La impresora 3D dando forma al punto de recogida físico</p>
     </div>
 
     <div class="foto-lateral foto-derecha" style="top: 190vh;">
-        <img src="WhatsApp Image 2026-10-11 at 22.44.56 (1).jpeg" alt="Programando web">
+        <img src="WhatsApp%20Image%202026-10-11%20at%2022.44.56%20(1).jpeg" alt="Programando web">
         <p>💻 Mi estación de creación: aquí es donde programo la web</p>
     </div>
 
-  <div class="foto-lateral foto-izquierda" style="top: 260vh;">
-    <img src="208659ad-b6cf-4baa-a69a-572cc9da1f76.jpg" alt="Kritik">
-    <p>👋 ¡Hola! Soy Kritik, el creador del proyecto</p>
-</div>
+    <!-- TU FOTO CON BRILLI-BRILLI Y MANO SALUDANDO -->
+    <div class="foto-lateral foto-izquierda sparkle-card" style="top: 260vh;">
+        <img src="208659ad-b6cf-4baa-a69a-572cc9da1f76.jpg" alt="Kritik">
+        <p><span class="hand-wave">👋</span> ¡Hola! Soy Kritik, el creador del proyecto</p>
+    </div>
 
     <!-- CONTENIDOS -->
     <main class="content-container">
@@ -664,7 +700,7 @@
     </footer>
 
     <!-- BOTÓN OUTLOOK FLOTANTE -->
-    <a href="mailto:kritiksubedi@campus.xaloc.org" class="outlook-float" title="Enviar correo">
+    <a href="mailto:kritik.subedi@campus.xaloc.org" class="outlook-float" title="Enviar correo">
         <svg viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
