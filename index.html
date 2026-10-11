@@ -340,6 +340,57 @@
             line-height: 1.5;
         }
 
+        /* INFOGRAFÍA DE PIEZAS 3D CON FLECHAS */
+        .infographic-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .arrow-down-indicator {
+            font-size: 2.5rem;
+            color: #ff4d4d;
+            animation: bounceArrow 1.5s infinite;
+        }
+
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .part-card {
+            width: 100%;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 6px solid #ff4d4d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .part-card:hover {
+            transform: scale(1.02);
+        }
+
+        .part-card.ranura { border-left-color: #28a745; }
+        .part-card.cuerpo { border-left-color: #dc3545; }
+        .part-card.pestillo { border-left-color: #007bff; }
+
+        .part-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #212529;
+        }
+
+        .part-card p {
+            font-size: 0.98rem;
+            color: #6c757d;
+            margin: 0;
+            line-height: 1.5;
+        }
+
         /* GALERÍA DE LOS 3 MEJORES DIBUJOS */
         .gallery-grid {
             display: grid;
@@ -607,7 +658,7 @@
                     <div class="step-box">
                         <div class="step-number">03</div>
                         <h3>Digitalización e Impresión</h3>
-                        <p>Escaneamos tu obra para la web oficial y seleccionamos las mejores para imprimir y exponer.</p>
+                        <p>Escaneamos tu obra para la web oficial y seleccionamos las mejores para imprimir y exponen.</p>
                     </div>
                 </div>
             </div>
@@ -671,24 +722,51 @@
             </div>
         </article>
 
-        <!-- TARJETA 5: MODELO 3D DEL BUZÓN (COLOCADO JUSTO AQUÍ) -->
+        <!-- TARJETA 5: MODELO 3D Y DESGLOSE INTERACTIVO CON FLECHAS -->
         <article class="bordered-card" id="buzon3d">
             <header class="card-header">
                 <h2>🖨️ Diseño 3D del Buzón</h2>
             </header>
             <div class="card-body" style="text-align: center;">
-                <p>Este es el modelo tridimensional interactivo del buzón diseñado para la impresión 3D (con su cuerpo principal en rojo, la ranura superior en verde y los detalles laterales en azul). ¡Gira de forma continua!</p>
+                <p>Este es el modelo tridimensional interactivo del buzón diseñado para la impresión 3D. ¡Gira de forma continua!</p>
                 
-                <!-- VISOR 3D QUE GIRA SOLO Y MANTIENE LOS COLORES -->
+                <!-- VISOR 3D QUE GIRA SOLO -->
                 <model-viewer 
                     src="buzon.glb" 
                     alt="Modelo 3D del Buzón" 
                     auto-rotate 
                     camera-controls 
-                    style="width: 100%; height: 450px; background-color: #f1f3f5; border-radius: 12px; border: 2px solid #e0e0e0; margin-top: 20px;">
+                    style="width: 100%; height: 400px; background-color: #f1f3f5; border-radius: 12px; border: 2px solid #e0e0e0; margin-top: 20px;">
                 </model-viewer>
 
-                <p style="font-size: 0.85rem; color: #6c757d; margin-top: 12px;">💡 <em>Haz clic y arrastra con el ratón para girar el buzón o hacer zoom.</em></p>
+                <p style="font-size: 0.85rem; color: #6c757d; margin-top: 10px;">💡 <em>Haz clic y arrastra con el ratón para rotar el buzón o hacer zoom.</em></p>
+
+                <!-- INFOGRAFÍA Y DESGLOSE CON FLECHAS HACIA ABAJO -->
+                <div class="infographic-container">
+                    
+                    <div class="arrow-down-indicator">⬇️</div>
+                    
+                    <div class="part-card ranura">
+                        <h3>🟢 1. Ranura Superior (Acceso de Dibujos)</h3>
+                        <p>Diseñada con una abertura optimizada para que los alumnos de 1º y 2º de ESO puedan introducir sus ilustraciones y bocetos de forma cómoda sin que se doblen.</p>
+                    </div>
+
+                    <div class="arrow-down-indicator">⬇️</div>
+
+                    <div class="part-card cuerpo">
+                        <h3>🔴 2. Cuerpo Principal del Buzón</h3>
+                        <p>Estructura central sólida e impresa en 3D que almacena de forma segura los trabajos artísticos depositados cada semana.</p>
+                    </div>
+
+                    <div class="arrow-down-indicator">⬇️</div>
+
+                    <div class="part-card pestillo">
+                        <h3>🔵 3. Sistema de Cierre / Pestillo Lateral</h3>
+                        <p>Mecanismo lateral de anclaje que permite abrir y cerrar el buzón con facilidad para la recogida y digitalización de las obras.</p>
+                    </div>
+
+                </div>
+
             </div>
         </article>
 
