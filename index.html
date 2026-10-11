@@ -11,18 +11,25 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: #fcfbf9;
             font-family: 'Arial Black', 'Impact', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- SECCIÓN 1: PORTADA PRINCIPAL --- */
+        .hero-section {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
             position: relative;
         }
 
-        /* TÍTULO PRINCIPAL CENTRADO */
         .title-container {
             text-align: center;
             z-index: 10;
@@ -38,7 +45,6 @@
             font-weight: 900;
         }
 
-        /* CUADROS EN LAS ESQUINAS */
         .art-frame {
             position: absolute;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
@@ -63,7 +69,6 @@
             z-index: 20;
         }
 
-        /* 1. Esquina superior izquierda */
         .top-left {
             top: 4%;
             left: 3%;
@@ -73,7 +78,6 @@
             border: 8px solid #8b5a2b;
         }
 
-        /* 2. Esquina superior derecha */
         .top-right {
             top: 4%;
             right: 3%;
@@ -83,9 +87,8 @@
             border: 8px solid #d4af37;
         }
 
-        /* 3. Esquina inferior izquierda */
         .bottom-left {
-            bottom: -2%;
+            bottom: 2%;
             left: 2%;
             width: 190px;
             height: 270px;
@@ -93,14 +96,125 @@
             border: 8px solid #1a1a1a;
         }
 
-        /* 4. Esquina inferior derecha */
         .bottom-right {
-            bottom: -2%;
+            bottom: 2%;
             right: 2%;
             width: 200px;
             height: 260px;
             transform: rotate(13deg);
             border: 8px solid #c5a059;
+        }
+
+        /* --- SECCIÓN 2: IDEA PRINCIPAL Y BARRAS ROJAS --- */
+        .content-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* BARRA DE BOTONES ROJOS */
+        .red-bars-container {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .red-bar-wrapper {
+            position: relative;
+        }
+
+        .red-bar {
+            width: 70px;
+            height: 22px;
+            background-color: #ff4d4d;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+        }
+
+        .red-bar-wrapper:hover .red-bar {
+            background-color: #ff1a1a;
+            transform: scale(1.15);
+            box-shadow: 0 6px 15px rgba(255, 26, 26, 0.5);
+        }
+
+        /* DESPLEGABLES DE LAS BARRAS ROJAS */
+        .dropdown-menu {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background-color: #ffffff;
+            border: 2px solid #ff4d4d;
+            border-radius: 12px;
+            padding: 10px;
+            width: 160px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 30;
+            text-align: center;
+        }
+
+        .red-bar-wrapper:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 12px;
+            color: #333;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffe6e6;
+            color: #ff1a1a;
+        }
+
+        /* CAJA VERDE / IDEA PRINCIPAL CENTRADA */
+        .main-idea-box {
+            width: 80%;
+            max-width: 750px;
+            min-height: 180px;
+            background-color: #5c8d89;
+            border-radius: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 50px;
+            box-shadow: 0 15px 35px rgba(92, 141, 137, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .main-idea-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(92, 141, 137, 0.45);
+        }
+
+        .main-idea-box p {
+            color: #ffffff;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            letter-spacing: 1px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
         }
 
         @keyframes fadeIn {
@@ -113,35 +227,97 @@
                 width: 120px !important;
                 height: 150px !important;
             }
+            .main-idea-box {
+                border-radius: 40px;
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. ARRIBA IZQUIERDA -->
-    <div class="art-frame top-left">
-        <img src="images.jpg" alt="Cuadro 1">
-    </div>
+    <!-- 1. PORTADA CON CUADROS Y TÍTULO -->
+    <section class="hero-section">
+        <div class="art-frame top-left">
+            <img src="images.jpg" alt="Cuadro 1">
+        </div>
 
-    <!-- 2. ARRIBA DERECHA -->
-    <div class="art-frame top-right">
-        <img src="images (1).jpg" alt="Cuadro 2">
-    </div>
+        <div class="art-frame top-right">
+            <img src="images (1).jpg" alt="Cuadro 2">
+        </div>
 
-    <!-- TÍTULO CENTRADO EXACTO -->
-    <div class="title-container">
-        <h1>ARTE<br>EN ACCIÓN</h1>
-    </div>
+        <div class="title-container">
+            <h1>ARTE<br>EN ACCIÓN</h1>
+        </div>
 
-    <!-- 3. ABAJO IZQUIERDA -->
-    <div class="art-frame bottom-left">
-        <img src="images (2).jpg" alt="Cuadro 3">
-    </div>
+        <div class="art-frame bottom-left">
+            <img src="images (2).jpg" alt="Cuadro 3">
+        </div>
 
-    <!-- 4. ABAJO DERECHA -->
-    <div class="art-frame bottom-right">
-        <img src="images (3).jpg" alt="Cuadro 4">
-    </div>
+        <div class="art-frame bottom-right">
+            <img src="images (3).jpg" alt="Cuadro 4">
+        </div>
+    </section>
+
+    <!-- 2. SEGUNDA SECCIÓN AL HACER SCROLL -->
+    <section class="content-section">
+        
+        <!-- BARRAS ROJAS CON DESPLEGABLES -->
+        <div class="red-bars-container">
+            
+            <div class="red-bar-wrapper">
+                <div class="red-bar"></div>
+                <div class="dropdown-menu">
+                    <a href="https://google.com" target="_blank">🔍 Buscar Arte</a>
+                    <a href="#idea">📌 Ver Idea</a>
+                </div>
+            </div>
+
+            <div class="red-bar-wrapper">
+                <div class="red-bar"></div>
+                <div class="dropdown-menu">
+                    <a href="https://wikipedia.org" target="_blank">📚 Historia</a>
+                    <a href="https://youtube.com" target="_blank">🎬 Vídeos</a>
+                </div>
+            </div>
+
+            <div class="red-bar-wrapper">
+                <div class="red-bar"></div>
+                <div class="dropdown-menu">
+                    <a href="#galeria">🖼️ Galería</a>
+                    <a href="#obras">🎨 Obras Top</a>
+                </div>
+            </div>
+
+            <div class="red-bar-wrapper">
+                <div class="red-bar"></div>
+                <div class="dropdown-menu">
+                    <a href="https://pinterest.com" target="_blank">💡 Inspiración</a>
+                </div>
+            </div>
+
+            <div class="red-bar-wrapper">
+                <div class="red-bar"></div>
+                <div class="dropdown-menu">
+                    <a href="#contacto">📩 Contacto</a>
+                </div>
+            </div>
+
+            <div class="red-bar-wrapper">
+                <div class="red-bar"></div>
+                <div class="dropdown-menu">
+                    <a href="https://github.com" target="_blank">🚀 Mi GitHub</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- IDEA PRINCIPAL CENTRADA -->
+        <div class="main-idea-box" id="idea">
+            <p>EL ARTE NO ES SOLO LO QUE VES, SINO LO QUE HACES SENTIR A LOS DEMÁS.</p>
+        </div>
+
+    </section>
 
 </body>
 </html>
