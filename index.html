@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arte en Acción</title>
+    <title>Arte en Acción | Proyecto PAI</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,92 +16,102 @@
         }
 
         body {
-            background-color: #fcfbf9;
-            font-family: 'Arial Black', 'Impact', sans-serif;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #212529;
             overflow-x: hidden;
         }
 
-        /* --- MENÚ FIJO SUPERIOR (ESTILO XALOC) --- */
+        /* --- MENÚ FIJO SUPERIOR CON TEXTO --- */
         .fixed-navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background-color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 15px 40px;
             z-index: 1000;
         }
 
-        .red-bars-container {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .nav-logo {
+            font-family: 'Impact', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #ff4d4d;
+            text-decoration: none;
         }
 
-        .red-bar-wrapper {
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-item {
             position: relative;
         }
 
-        .red-bar {
-            width: 65px;
-            height: 18px;
+        .nav-link-btn {
             background-color: #ff4d4d;
-            border-radius: 10px;
-            cursor: pointer;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(255, 77, 77, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+            display: inline-block;
         }
 
-        .red-bar-wrapper:hover .red-bar {
-            background-color: #ff1a1a;
-            transform: scale(1.12);
-            box-shadow: 0 5px 12px rgba(255, 26, 26, 0.5);
+        .nav-link-btn:hover {
+            background-color: #e03131;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(224, 49, 49, 0.4);
         }
 
-        /* MENÚ DESPLEGABLE */
-        .dropdown-menu {
+        /* MENÚ DESPLEGABLE PROFESIONAL */
+        .dropdown {
             position: absolute;
-            top: 28px;
+            top: 38px;
             left: 50%;
             transform: translateX(-50%) translateY(-10px);
             background-color: #ffffff;
-            border: 2px solid #ff4d4d;
-            border-radius: 10px;
-            padding: 8px;
-            width: 150px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 10px;
+            width: 170px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            text-align: center;
         }
 
-        .red-bar-wrapper:hover .dropdown-menu {
+        .nav-item:hover .dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
         }
 
-        .dropdown-menu a {
+        .dropdown a {
             display: block;
-            padding: 6px 10px;
-            color: #333;
+            padding: 8px 12px;
+            color: #495057;
             text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.2s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
         }
 
-        .dropdown-menu a:hover {
-            background-color: #ffe6e6;
-            color: #ff1a1a;
+        .dropdown a:hover {
+            background-color: #fff0f0;
+            color: #ff4d4d;
         }
 
         /* --- SECCIÓN 1: PORTADA PRINCIPAL --- */
@@ -111,7 +121,8 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            margin-top: 60px; /* Espacio para que el menú fijo no tape el título */
+            margin-top: 50px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .title-container {
@@ -121,23 +132,34 @@
         }
 
         .title-container h1 {
-            font-size: clamp(3.5rem, 9vw, 7rem);
-            color: #000000;
-            letter-spacing: 4px;
+            font-family: 'Impact', sans-serif;
+            font-size: clamp(3.5rem, 9vw, 7.5rem);
+            color: #111;
+            letter-spacing: 6px;
             text-transform: uppercase;
             line-height: 1.05;
-            font-weight: 900;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+        }
+
+        .title-container p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-top: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
         .art-frame {
             position: absolute;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             background: #ffffff;
+            border-radius: 6px;
         }
 
         .art-frame img {
@@ -149,80 +171,136 @@
 
         .art-frame:hover {
             transform: scale(1.08) rotate(0deg) !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
             z-index: 20;
         }
 
-        .top-left {
-            top: 4%;
-            left: 3%;
-            width: 210px;
-            height: 250px;
-            transform: rotate(-14deg);
-            border: 8px solid #8b5a2b;
-        }
+        .top-left { top: 6%; left: 4%; width: 220px; height: 260px; transform: rotate(-12deg); border: 8px solid #8b5a2b; }
+        .top-right { top: 6%; right: 4%; width: 260px; height: 210px; transform: rotate(10deg); border: 8px solid #d4af37; }
+        .bottom-left { bottom: 6%; left: 3%; width: 200px; height: 280px; transform: rotate(-8deg); border: 8px solid #1a1a1a; }
+        .bottom-right { bottom: 6%; right: 3%; width: 210px; height: 270px; transform: rotate(12deg); border: 8px solid #c5a059; }
 
-        .top-right {
-            top: 4%;
-            right: 3%;
-            width: 250px;
-            height: 200px;
-            transform: rotate(11deg);
-            border: 8px solid #d4af37;
-        }
-
-        .bottom-left {
-            bottom: 2%;
-            left: 2%;
-            width: 190px;
-            height: 270px;
-            transform: rotate(-9deg);
-            border: 8px solid #1a1a1a;
-        }
-
-        .bottom-right {
-            bottom: 2%;
-            right: 2%;
-            width: 200px;
-            height: 260px;
-            transform: rotate(13deg);
-            border: 8px solid #c5a059;
-        }
-
-        /* --- SECCIONES DE CONTENIDO AL BAJAR --- */
+        /* --- SECCIONES DE CONTENIDO MODERNAS --- */
         .content-section {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 80px 20px;
-            border-top: 2px dashed #e0e0e0;
+            padding: 100px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
         }
 
-        .section-box {
-            width: 85%;
-            max-width: 800px;
-            background-color: #5c8d89;
-            border-radius: 50px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(92, 141, 137, 0.3);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .section-box h2 {
+        .section-card {
+            width: 90%;
+            max-width: 900px;
+            background: linear-gradient(135deg, #2b2d42 0%, #1a1b2f 100%);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            text-align: left;
             color: #ffffff;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff4d4d;
+            font-family: 'Impact', sans-serif;
+        }
+
+        .section-card p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            color: #adb5bd;
+            font-weight: 400;
+        }
+
+        /* --- PIE DE PÁGINA (ESTILO XALOC / OUTLOOK) --- */
+        footer {
+            background-color: #161824;
+            color: #adb5bd;
+            padding: 60px 40px 30px 40px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .section-box p {
-            color: #f0f7f6;
-            font-size: clamp(1rem, 2.2vw, 1.3rem);
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff4d4d;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #2b2d42;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        /* BOTÓN FLOTANTE OUTLOOK (ESTILO WHATSAPP DE XALOC) */
+        .outlook-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0078d4;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(0, 120, 212, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .outlook-float:hover {
+            transform: scale(1.1);
+        }
+
+        .outlook-float svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
         }
 
         @keyframes fadeIn {
@@ -231,98 +309,126 @@
         }
 
         @media (max-width: 768px) {
-            .art-frame {
-                width: 110px !important;
-                height: 140px !important;
-            }
-            .section-box {
-                border-radius: 30px;
-                padding: 25px;
-            }
+            .art-frame { width: 110px !important; height: 140px !important; }
+            .fixed-navbar { padding: 15px 20px; }
+            .nav-links { gap: 10px; }
+            .nav-link-btn { padding: 6px 12px; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ FIJO SUPERIOR (TE ACOMPAÑA SIEMPRE) -->
+    <!-- MENÚ SUPERIOR FIJO PROFESIONAL -->
     <nav class="fixed-navbar">
-        <div class="red-bars-container">
-            
-            <div class="red-bar-wrapper">
-                <div class="red-bar"></div>
-                <div class="dropdown-menu">
-                    <a href="#idea">📌 Idea Principal</a>
+        <a href="#" class="nav-logo">ARTE EN ACCIÓN</a>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#idea" class="nav-link-btn">Principal</a>
+                <div class="dropdown">
+                    <a href="#idea">📌 Concepto</a>
                     <a href="#obras">🎨 Las Obras</a>
                 </div>
-            </div>
-
-            <div class="red-bar-wrapper">
-                <div class="red-bar"></div>
-                <div class="dropdown-menu">
+            </li>
+            <li class="nav-item">
+                <a href="#historia" class="nav-link-btn">Cultura</a>
+                <div class="dropdown">
                     <a href="#historia">📚 Historia</a>
-                    <a href="#tecnica">⚡ Técnicas</a>
+                    <a href="#tecnica">⚡ Estilo</a>
                 </div>
-            </div>
-
-            <div class="red-bar-wrapper">
-                <div class="red-bar"></div>
-                <div class="dropdown-menu">
-                    <a href="#galeria">🖼️ Galería</a>
+            </li>
+            <li class="nav-item">
+                <a href="#creador" class="nav-link-btn">Proyecto</a>
+                <div class="dropdown">
+                    <a href="#creador">👤 Autor (PAI)</a>
                 </div>
-            </div>
-
-            <div class="red-bar-wrapper">
-                <div class="red-bar"></div>
-                <div class="dropdown-menu">
-                    <a href="#creador">👤 Sobre Mí</a>
-                </div>
-            </div>
-
-        </div>
+            </li>
+        </ul>
     </nav>
 
     <!-- SECCIÓN 1: PORTADA -->
     <section class="hero-section">
         <div class="art-frame top-left"><img src="images.jpg" alt="Cuadro 1"></div>
         <div class="art-frame top-right"><img src="images (1).jpg" alt="Cuadro 2"></div>
+        
         <div class="title-container">
             <h1>ARTE<br>EN ACCIÓN</h1>
+            <p>Colegio Xaloc • PAI</p>
         </div>
+
         <div class="art-frame bottom-left"><img src="images (2).jpg" alt="Cuadro 3"></div>
         <div class="art-frame bottom-right"><img src="images (3).jpg" alt="Cuadro 4"></div>
     </section>
 
     <!-- SECCIÓN 2: IDEA PRINCIPAL -->
     <section class="content-section" id="idea">
-        <div class="section-box">
-            <h2>Idea Principal</h2>
-            <p>El arte no es solo lo que ves colgado en un museo, sino lo que eres capaz de transmitir, mover y hacer sentir a los demás a través de cada creación.</p>
+        <div class="section-card">
+            <h2>Idea Principal del Proyecto</h2>
+            <p>El arte no se limita a objetos estáticos colgados en una pared; es una herramienta de expresión viva que conecta emociones, cultura y tecnología en un mismo espacio digital interactivo.</p>
         </div>
     </section>
 
     <!-- SECCIÓN 3: LAS OBRAS -->
-    <section class="content-section" id="obras">
-        <div class="section-box" style="background-color: #3a506b;">
-            <h2>Las Obras</h2>
-            <p>Cada cuadro seleccionado en la portada representa un momento clave de la historia de la expresión artística, fusionando estilos únicos e inmortales.</p>
+    <section class="content-section" id="obras" style="background-color: #f8f9fa;">
+        <div class="section-card" style="background: linear-gradient(135deg, #3a506b 0%, #1c2541 100%);">
+            <h2>Las Obras Clave</h2>
+            <p>Cada pieza seleccionada en la portada refleja un hito histórico de la pintura universal, fusionando el clasicismo con la accesibilidad de la web moderna.</p>
         </div>
     </section>
 
     <!-- SECCIÓN 4: HISTORIA -->
     <section class="content-section" id="historia">
-        <div class="section-box" style="background-color: #485696;">
-            <h2>Historia del Arte</h2>
-            <p>Desde las primeras pinturas rupestres hasta la era digital moderna, el ser humano siempre ha buscado plasmar sus emociones en el mundo físico y virtual.</p>
+        <div class="section-card" style="background: linear-gradient(135deg, #485696 0%, #293241 100%);">
+            <h2>Evolución y Expresión</h2>
+            <p>Desde las vanguardias históricas hasta los formatos digitales actuales, la humanidad siempre ha buscado trascender a través de la creatividad visual y plástica.</p>
         </div>
     </section>
 
     <!-- SECCIÓN 5: SOBRE MÍ -->
     <section class="content-section" id="creador">
-        <div class="section-box" style="background-color: #8d5b4c;">
-            <h2>Sobre el Proyecto</h2>
-            <p>Un espacio interactivo diseñado desde cero para mostrar que el diseño web y el arte clásico pueden ir de la mano con un toque moderno.</p>
+        <div class="section-card" style="background: linear-gradient(135deg, #8d5b4c 0%, #3d261d 100%);">
+            <h2>Desarrollo y Autoría</h2>
+            <p>Proyecto académico de diseño web desarrollado como parte del currículo del PAI, implementando interfaces dinámicas y código limpio sin dependencias externas.</p>
         </div>
     </section>
+
+    <!-- PIE DE PÁGINA (FOOTER ESTILO XALOC) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Colegio Xaloc</h3>
+                <ul>
+                    <li>Can Trias, 4-6</li>
+                    <li>L'Hospitalet de Llobregat, Barcelona</li>
+                    <li><strong>Contacto:</strong> kritik.subedi@campus.xaloc.org</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Secciones PAI</h3>
+                <ul>
+                    <li><a href="#idea">Idea Principal</a></li>
+                    <li><a href="#obras">Obras de Arte</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="https://github.com/kritiksubedi-prog/mi-web" target="_blank">Repositorio GitHub</a></li>
+                    <li><a href="https://www.xaloc.org" target="_blank">Web Colegio Xaloc</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kritik Subedi — Proyecto Escolar Arte en Acción. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE OUTLOOK (CORREO DEL COLE) -->
+    <a href="mailto:kritik.subedi@campus.xaloc.org" class="outlook-float" title="Enviar correo a kritik.subedi@campus.xaloc.org">
+        <svg viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
 
 </body>
 </html>
