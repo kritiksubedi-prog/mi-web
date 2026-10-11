@@ -77,7 +77,6 @@
             box-shadow: 0 5px 12px rgba(224, 49, 49, 0.35);
         }
 
-        /* MENÚ DESPLEGABLE CON BORDES */
         .dropdown {
             position: absolute;
             top: 38px;
@@ -117,7 +116,7 @@
             color: #ff4d4d;
         }
 
-        /* --- SECCIÓN 1: PORTADA PRINCIPAL CON CUADROS --- */
+        /* --- SECCIÓN PORTADA --- */
         .hero-section {
             min-height: 100vh;
             display: flex;
@@ -182,7 +181,7 @@
         .bottom-left { bottom: 6%; left: 3%; width: 200px; height: 280px; transform: rotate(-8deg); border: 8px solid #1a1a1a; }
         .bottom-right { bottom: 6%; right: 3%; width: 210px; height: 270px; transform: rotate(12deg); border: 8px solid #c5a059; }
 
-        /* --- CONTENEDORES CON BORDES LIMPIOS --- */
+        /* --- CONTENEDORES DE INFORMACIÓN --- */
         .content-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -228,7 +227,7 @@
             margin-bottom: 15px;
         }
 
-        /* PASO A PASO EN GRILLA CON BORDES */
+        /* PASO A PASO */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -270,12 +269,13 @@
             line-height: 1.5;
         }
 
-        /* GALERÍA DE MUESTRA */
+        /* GALERÍA DE LOS 3 MEJORES DIBUJOS */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             margin-top: 25px;
+            margin-bottom: 25px;
         }
 
         .gallery-item {
@@ -285,11 +285,12 @@
             overflow: hidden;
             text-align: center;
             padding: 15px;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
         .gallery-item:hover {
             border-color: #ff4d4d;
+            transform: translateY(-3px);
         }
 
         .gallery-placeholder {
@@ -307,7 +308,33 @@
             border: 1px dashed #ced4da;
         }
 
-        /* --- PIE DE PÁGINA (ESTILO XALOC) --- */
+        /* BOTÓN VER MÁS */
+        .see-more-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .see-more-btn {
+            display: inline-block;
+            background-color: #212529;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .see-more-btn:hover {
+            background-color: #ff4d4d;
+            color: #ffffff;
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(255, 77, 77, 0.3);
+        }
+
+        /* --- FOOTER --- */
         footer {
             background-color: #161824;
             color: #adb5bd;
@@ -363,7 +390,7 @@
             color: #6c757d;
         }
 
-        /* BOTÓN FLOTANTE OUTLOOK DE XALOC */
+        /* BOTÓN OUTLOOK FLOTANTE */
         .outlook-float {
             position: fixed;
             bottom: 30px;
@@ -423,20 +450,20 @@
                 <a href="#eso1" class="nav-link-btn">1º ESO</a>
                 <div class="dropdown">
                     <a href="#eso1">📮 Buzón 1º ESO</a>
-                    <a href="#eso1">🖼️ Galería</a>
+                    <a href="#eso1">🖼️ Top 3 Dibujos</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a href="#eso2" class="nav-link-btn">2º ESO</a>
                 <div class="dropdown">
                     <a href="#eso2">📮 Buzón 2º ESO</a>
-                    <a href="#eso2">🖼️ Galería</a>
+                    <a href="#eso2">🖼️ Top 3 Dibujos</a>
                 </div>
             </li>
         </ul>
     </nav>
 
-    <!-- SECCIÓN 1: PORTADA PRINCIPAL CON CUADROS -->
+    <!-- PORTADA -->
     <section class="hero-section">
         <div class="art-frame top-left"><img src="images.jpg" alt="Cuadro 1"></div>
         <div class="art-frame top-right"><img src="images (1).jpg" alt="Cuadro 2"></div>
@@ -450,17 +477,17 @@
         <div class="art-frame bottom-right"><img src="images (3).jpg" alt="Cuadro 4"></div>
     </section>
 
-    <!-- CONTENIDOS PRINCIPALES EN TARJETAS BORDEDAS -->
+    <!-- CONTENIDOS -->
     <main class="content-container">
 
-        <!-- TARJETA 1: SOBRE EL PROYECTO -->
+        <!-- TARJETA 1: ¿QUÉ ES ARTE EN ACCIÓN? -->
         <article class="bordered-card" id="proyecto">
             <header class="card-header">
                 <h2>¿Qué es Arte en Acción?</h2>
             </header>
             <div class="card-body">
-                <p><strong>Arte en Acción</strong> es una iniciativa creativa diseñada para dar visibilidad al talento artístico de los alumnos de <strong>1º y 2º de ESO</strong> en nuestro colegio.</p>
-                <p>A través de buzones de recogida física instalados directamente en las aulas, recopilamos los mejores dibujos, ilustraciones y bocetos elaborados por los estudiantes para digitalizarlos, publicarlos en esta galería web e imprimir las obras destacadas.</p>
+                <p><strong>Arte en Acción</strong> es una iniciativa creativa diseñada para dar visibilidad al talento artístico de los alumnos de <strong>1º y 2º de ESO</strong> en nuestro colegio[cite: 12].</p>
+                <p>A través de un buzón de recogida física instalado para cada curso, recopilamos los mejores dibujos, ilustraciones y bocetos elaborados por los estudiantes para digitalizarlos, publicarlos en esta galería web e imprimir las obras destacadas[cite: 12].</p>
             </div>
         </article>
 
@@ -474,34 +501,121 @@
                     <div class="step-box">
                         <div class="step-number">01</div>
                         <h3>Crea tu Obra</h3>
-                        <p>Dibuja o ilustra tu creación en papel utilizando cualquier técnica artística que prefieras.</p>
+                        <p>Dibuja o ilustra tu creación en papel utilizando cualquier técnica artística que prefieras[cite: 13].</p>
                     </div>
                     <div class="step-box">
                         <div class="step-number">02</div>
                         <h3>Deposita en el Buzón</h3>
-                        <p>Introduce tu trabajo en el buzón físico correspondiente de tu aula de 1º o 2º de ESO.</p>
+                        <p>Introduce tu trabajo en el buzón físico correspondiente a tu curso (1º o 2º de ESO)[cite: 13].</p>
                     </div>
                     <div class="step-box">
                         <div class="step-number">03</div>
                         <h3>Digitalización e Impresión</h3>
-                        <p>Escaneamos tu obra para la web oficial y seleccionamos las mejores para imprimir y exponer.</p>
+                        <p>Escaneamos tu obra para la web oficial y seleccionamos las mejores para imprimir y exponer[cite: 13].</p>
                     </div>
                 </div>
             </div>
         </article>
 
-        <!-- TARJETA 3: SECCIÓN 1º DE ESO -->
+        <!-- TARJETA 3: BUZÓN DE 1º DE ESO -->
         <article class="bordered-card" id="eso1">
             <header class="card-header">
                 <h2>Buzón de 1º de ESO</h2>
             </header>
             <div class="card-body">
-                <p>Espacio reservado para los trabajos, ilustraciones y bocetos recogidos en las aulas de 1º de ESO.</p>
+                <p>Aquí mostramos las 3 mejores obras seleccionadas del buzón de 1º de ESO[cite: 14].</p>
+                
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">Dibujo 1 (Próximamente)</div>
-                        <p><strong>Obra #01</strong> — 1º ESO</p>
+                        <div class="gallery-placeholder">Top #1 Dibujo</div>
+                        <p><strong>1º Puesto</strong> — 1º ESO</p>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">Dibujo 2 (Próximamente)</div>
-                        <p><strong>Obra #02
+                        <div class="gallery-placeholder">Top #2 Dibujo</div>
+                        <p><strong>2º Puesto</strong> — 1º ESO</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">Top #3 Dibujo</div>
+                        <p><strong>3º Puesto</strong> — 1º ESO</p>
+                    </div>
+                </div>
+
+                <div class="see-more-container">
+                    <a href="galeria-1eso.html" class="see-more-btn">Ver más dibujos de 1º ESO →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- TARJETA 4: BUZÓN DE 2º DE ESO -->
+        <article class="bordered-card" id="eso2">
+            <header class="card-header">
+                <h2>Buzón de 2º de ESO</h2>
+            </header>
+            <div class="card-body">
+                <p>Aquí mostramos las 3 mejores obras seleccionadas del buzón de 2º de ESO.</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">Top #1 Dibujo</div>
+                        <p><strong>1º Puesto</strong> — 2º ESO</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">Top #2 Dibujo</div>
+                        <p><strong>2º Puesto</strong> — 2º ESO</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">Top #3 Dibujo</div>
+                        <p><strong>3º Puesto</strong> — 2º ESO</p>
+                    </div>
+                </div>
+
+                <div class="see-more-container">
+                    <a href="galeria-2eso.html" class="see-more-btn">Ver más dibujos de 2º ESO →</a>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Colegio Xaloc</h3>
+                <ul>
+                    <li>Can Trias, 4-6</li>
+                    <li>L'Hospitalet de Llobregat, Barcelona</li>
+                    <li><strong>Correo:</strong> kritik.subedi@campus.xaloc.org</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#proyecto">Sobre el Proyecto</a></li>
+                    <li><a href="#pasos">Cómo Participar</a></li>
+                    <li><a href="#eso1">Buzón 1º ESO</a></li>
+                    <li><a href="#eso2">Buzón 2º ESO</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Enlaces PAI</h3>
+                <ul>
+                    <li><a href="https://github.com/kritiksubedi-prog/mi-web" target="_blank">Repositorio GitHub</a></li>
+                    <li><a href="https://www.xaloc.org" target="_blank">Web Oficial Xaloc</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kritik Subedi — Proyecto Arte en Acción (PAI 1º y 2º ESO). Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN OUTLOOK FLOTANTE -->
+    <a href="mailto:kritik.subedi@campus.xaloc.org" class="outlook-float" title="Enviar correo a kritik.subedi@campus.xaloc.org">
+        <svg viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
