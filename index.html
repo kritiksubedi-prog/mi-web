@@ -47,12 +47,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fff;
+            background: #e2e8f0;
         }
 
-        .art-frame svg {
+        .art-frame img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -62,37 +63,37 @@
             z-index: 20;
         }
 
-        /* 1. Esquina superior izquierda */
+        /* 1. Esquina superior izquierda (El Grito) */
         .top-left {
             top: 4%;
             left: 3%;
-            width: 220px;
-            height: 180px;
+            width: 200px;
+            height: 240px;
             transform: rotate(-14deg);
             border: 8px solid #8b5a2b;
         }
 
-        /* 2. Esquina superior derecha */
+        /* 2. Esquina superior derecha (La Noche Estrellada) */
         .top-right {
             top: 4%;
             right: 3%;
             width: 250px;
-            height: 200px;
+            height: 190px;
             transform: rotate(11deg);
             border: 8px solid #d4af37;
         }
 
-        /* 3. Esquina inferior izquierda */
+        /* 3. Esquina inferior izquierda (Mona Lisa) */
         .bottom-left {
             bottom: -2%;
             left: 2%;
             width: 180px;
-            height: 250px;
+            height: 260px;
             transform: rotate(-9deg);
             border: 8px solid #1a1a1a;
         }
 
-        /* 4. Esquina inferior derecha */
+        /* 4. Esquina inferior derecha (La Joven de la Perla) */
         .bottom-right {
             bottom: -2%;
             right: 2%;
@@ -107,47 +108,24 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* Adaptación para móviles */
         @media (max-width: 768px) {
             .art-frame {
                 width: 120px !important;
-                height: 140px !important;
+                height: 150px !important;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- CUADRO ARRIBA IZQUIERDA -->
+    <!-- 1. EL GRITO (MUNCH) -->
     <div class="art-frame top-left">
-        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
-            <defs>
-                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ff7e5f;" />
-                    <stop offset="100%" style="stop-color:#feb47b;" />
-                </linearGradient>
-            </defs>
-            <rect width="400" height="300" fill="url(#g1)"/>
-            <circle cx="200" cy="150" r="80" fill="#ffffff" opacity="0.3"/>
-            <path d="M50,250 Q200,50 350,250" stroke="#fff" stroke-width="8" fill="none" opacity="0.6"/>
-        </svg>
+        <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/the-scream-edvard-munch.jpg" crossorigin="anonymous" alt="El Grito">
     </div>
 
-    <!-- CUADRO ARRIBA DERECHA -->
+    <!-- 2. LA NOCHE ESTRELLADA (VAN GOGH) -->
     <div class="art-frame top-right">
-        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
-            <defs>
-                <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#0f2027;" />
-                    <stop offset="50%" style="stop-color:#203a43;" />
-                    <stop offset="100%" style="stop-color:#2c5364;" />
-                </linearGradient>
-            </defs>
-            <rect width="400" height="300" fill="url(#g2)"/>
-            <circle cx="320" cy="70" r="40" fill="#fddb3a"/>
-            <circle cx="100" cy="200" r="20" fill="#ffffff" opacity="0.8"/>
-            <circle cx="220" cy="120" r="15" fill="#ffffff" opacity="0.6"/>
-        </svg>
+        <img src="https://images.fineartamerica.com/images-medium-large-5/the-starry-night-vincent-van-gogh.jpg" crossorigin="anonymous" alt="La Noche Estrellada">
     </div>
 
     <!-- TÍTULO CENTRADO EXACTO -->
@@ -155,34 +133,14 @@
         <h1>ARTE<br>EN ACCIÓN</h1>
     </div>
 
-    <!-- CUADRO ABAJO IZQUIERDA -->
+    <!-- 3. MONA LISA (DA VINCI) -->
     <div class="art-frame bottom-left">
-        <svg viewBox="0 0 300 400" preserveAspectRatio="none">
-            <defs>
-                <linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#11998e;" />
-                    <stop offset="100%" style="stop-color:#38ef7d;" />
-                </linearGradient>
-            </defs>
-            <rect width="300" height="400" fill="url(#g3)"/>
-            <ellipse cx="150" cy="220" rx="80" ry="120" fill="#1a2a3a" opacity="0.8"/>
-            <circle cx="150" cy="130" r="50" fill="#f3a683"/>
-        </svg>
+        <img src="https://images.fineartamerica.com/images-medium-large-5/mona-lisa-leonardo-da-vinci.jpg" crossorigin="anonymous" alt="Mona Lisa">
     </div>
 
-    <!-- CUADRO ABAJO DERECHA -->
+    <!-- 4. LA JOVEN DE LA PERLA (VERMEER) -->
     <div class="art-frame bottom-right">
-        <svg viewBox="0 0 300 400" preserveAspectRatio="none">
-            <defs>
-                <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#8e2de2;" />
-                    <stop offset="100%" style="stop-color:#4a00e0;" />
-                </linearGradient>
-            </defs>
-            <rect width="300" height="400" fill="url(#g4)"/>
-            <polygon points="150,50 250,320 50,320" fill="#ff007f" opacity="0.7"/>
-            <circle cx="150" cy="180" r="35" fill="#00d2ff"/>
-        </svg>
+        <img src="https://images.fineartamerica.com/images-medium-large-5/girl-with-a-pearl-earring-johannes-vermeer.jpg" crossorigin="anonymous" alt="La Joven de la Perla">
     </div>
 
 </body>
