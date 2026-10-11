@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Completa 1º ESO | Arte en Acción</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #212529; }
+
+        /* NAVBAR FIJO */
+        .fixed-navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: #ffffff; border-bottom: 2px solid #e9ecef;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 30px; z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-logo { font-family: 'Impact', sans-serif; font-size: 1.5rem; color: #ff4d4d; text-decoration: none; }
+        .back-btn { background-color: #212529; color: white; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.88rem; transition: background 0.3s; }
+        .back-btn:hover { background-color: #ff4d4d; }
+
+        /* CONTENIDO DE GALERÍA */
+        .gallery-container { max-width: 1100px; margin: 100px auto 60px auto; padding: 0 20px; }
+        .page-header { text-align: center; margin-bottom: 40px; }
+        .page-header h1 { font-family: 'Impact', sans-serif; font-size: 3rem; color: #111; letter-spacing: 2px; text-transform: uppercase; }
+        .page-header p { color: #ff4d4d; font-weight: bold; font-size: 1.1rem; margin-top: 5px; }
+
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .art-card {
+            background: #ffffff; border: 2px solid #dee2e6; border-radius: 12px;
+            overflow: hidden; padding: 15px; text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .art-card:hover { border-color: #ff4d4d; transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+        .art-card-img { width: 100%; height: 220px; background-color: #e9ecef; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: #adb5bd; font-weight: bold; border: 1px dashed #ced4da; margin-bottom: 12px; }
+        .art-card h3 { font-size: 1.1rem; color: #212529; margin-bottom: 5px; }
+        .art-card p { font-size: 0.85rem; color: #6c757d; }
+
+        /* FOOTER Y OUTLOOK */
+        footer { background-color: #161824; color: #adb5bd; padding: 40px 20px 20px 20px; text-align: center; font-size: 0.85rem; margin-top: 80px; }
+        footer a { color: #ff4d4d; text-decoration: none; }
+        .outlook-float { position: fixed; bottom: 30px; right: 30px; background-color: #0078d4; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 8px 20px rgba(0, 120, 212, 0.4); z-index: 1000; }
+        .outlook-float svg { width: 28px; height: 28px; fill: white; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed-navbar">
+        <a href="index.html" class="nav-logo">ARTE EN ACCIÓN</a>
+        <a href="index.html" class="back-btn">← Volver al Inicio</a>
+    </nav>
+
+    <main class="gallery-container">
+        <header class="page-header">
+            <h1>Galería de 1º de ESO</h1>
+            <p>Buzón de Recogida de Obras Artísticas</p>
+        </header>
+
+        <section class="full-gallery-grid">
+            <div class="art-card">
+                <div class="art-card-img">Foto Dibujo 1</div>
+                <h3>Obra #01</h3>
+                <p>Autor: Alumno 1º ESO</p>
+            </div>
+            <div class="art-card">
+                <div class="art-card-img">Foto Dibujo 2</div>
+                <h3>Obra #02</h3>
+                <p>Autor: Alumno 1º ESO</p>
+            </div>
+            <div class="art-card">
+                <div class="art-card-img">Foto Dibujo 3</div>
+                <h3>Obra #03</h3>
+                <p>Autor: Alumno 1º ESO</p>
+            </div>
+            <div class="art-card">
+                <div class="art-card-img">Foto Dibujo 4</div>
+                <h3>Obra #04</h3>
+                <p>Autor: Alumno 1º ESO</p>
+            </div>
+            <div class="art-card">
+                <div class="art-card-img">Foto Dibujo 5</div>
+                <h3>Obra #05</h3>
+                <p>Autor: Alumno 1º ESO</p>
+            </div>
+            <div class="art-card">
+                <div class="art-card-img">Foto Dibujo 6</div>
+                <h3>Obra #06</h3>
+                <p>Autor: Alumno 1º ESO</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kritik Subedi — Colegio Xaloc • Proyecto Arte en Acción (PAI)</p>
+    </footer>
+
+    <a href="mailto:kritik.subedi@campus.xaloc.org" class="outlook-float" title="Enviar correo">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+
+</body>
+</html>
