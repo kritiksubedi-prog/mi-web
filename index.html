@@ -30,78 +30,76 @@
         }
 
         .title-container h1 {
-            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-size: clamp(3.5rem, 9vw, 7rem);
             color: #000000;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            line-height: 1.1;
+            line-height: 1.05;
             font-weight: 900;
         }
 
         /* CUADROS EN LAS ESQUINAS */
         .art-frame {
             position: absolute;
-            border: 8px solid #3a2a1d;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            background: #e2e8f0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #fff;
         }
 
-        .art-frame img {
+        .art-frame svg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
             display: block;
         }
 
         .art-frame:hover {
             transform: scale(1.08) rotate(0deg) !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             z-index: 20;
         }
 
-        /* 1. Esquina superior izquierda (El Grito) */
+        /* 1. Esquina superior izquierda */
         .top-left {
             top: 4%;
             left: 3%;
-            width: 190px;
-            height: 230px;
+            width: 220px;
+            height: 180px;
             transform: rotate(-14deg);
-            border-color: #8b5a2b;
+            border: 8px solid #8b5a2b;
         }
 
-        /* 2. Esquina superior derecha (La Noche Estrellada) */
+        /* 2. Esquina superior derecha */
         .top-right {
             top: 4%;
             right: 3%;
-            width: 240px;
-            height: 190px;
+            width: 250px;
+            height: 200px;
             transform: rotate(11deg);
-            border-color: #d4af37;
+            border: 8px solid #d4af37;
         }
 
-        /* 3. Esquina inferior izquierda (Mona Lisa) */
+        /* 3. Esquina inferior izquierda */
         .bottom-left {
             bottom: -2%;
             left: 2%;
-            width: 170px;
-            height: 240px;
+            width: 180px;
+            height: 250px;
             transform: rotate(-9deg);
-            border-color: #1a1a1a;
+            border: 8px solid #1a1a1a;
         }
 
-        /* 4. Esquina inferior derecha (La Joven de la Perla) */
+        /* 4. Esquina inferior derecha */
         .bottom-right {
             bottom: -2%;
             right: 2%;
-            width: 180px;
-            height: 240px;
+            width: 190px;
+            height: 250px;
             transform: rotate(13deg);
-            border-color: #c5a059;
+            border: 8px solid #c5a059;
         }
 
         @keyframes fadeIn {
@@ -112,7 +110,7 @@
         /* Adaptación para móviles */
         @media (max-width: 768px) {
             .art-frame {
-                width: 110px !important;
+                width: 120px !important;
                 height: 140px !important;
             }
         }
@@ -120,14 +118,36 @@
 </head>
 <body>
 
-    <!-- CUADRO ARRIBA IZQUIERDA (El Grito - Munch) -->
+    <!-- CUADRO ARRIBA IZQUIERDA -->
     <div class="art-frame top-left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73.5_cm%2C_National_Gallery_of_Norway.jpg/400px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73.5_cm%2C_National_Gallery_of_Norway.jpg" alt="El Grito">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff7e5f;" />
+                    <stop offset="100%" style="stop-color:#feb47b;" />
+                </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#g1)"/>
+            <circle cx="200" cy="150" r="80" fill="#ffffff" opacity="0.3"/>
+            <path d="M50,250 Q200,50 350,250" stroke="#fff" stroke-width="8" fill="none" opacity="0.6"/>
+        </svg>
     </div>
 
-    <!-- CUADRO ARRIBA DERECHA (La Noche Estrellada - Van Gogh) -->
+    <!-- CUADRO ARRIBA DERECHA -->
     <div class="art-frame top-right">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/450px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="La Noche Estrellada">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0f2027;" />
+                    <stop offset="50%" style="stop-color:#203a43;" />
+                    <stop offset="100%" style="stop-color:#2c5364;" />
+                </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#g2)"/>
+            <circle cx="320" cy="70" r="40" fill="#fddb3a"/>
+            <circle cx="100" cy="200" r="20" fill="#ffffff" opacity="0.8"/>
+            <circle cx="220" cy="120" r="15" fill="#ffffff" opacity="0.6"/>
+        </svg>
     </div>
 
     <!-- TÍTULO CENTRADO EXACTO -->
@@ -135,14 +155,34 @@
         <h1>ARTE<br>EN ACCIÓN</h1>
     </div>
 
-    <!-- CUADRO ABAJO IZQUIERDA (Mona Lisa - Da Vinci) -->
+    <!-- CUADRO ABAJO IZQUIERDA -->
     <div class="art-frame bottom-left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/300px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Mona Lisa">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#11998e;" />
+                    <stop offset="100%" style="stop-color:#38ef7d;" />
+                </linearGradient>
+            </defs>
+            <rect width="300" height="400" fill="url(#g3)"/>
+            <ellipse cx="150" cy="220" rx="80" ry="120" fill="#1a2a3a" opacity="0.8"/>
+            <circle cx="150" cy="130" r="50" fill="#f3a683"/>
+        </svg>
     </div>
 
-    <!-- CUADRO ABAJO DERECHA (La Joven de la Perla - Vermeer) -->
+    <!-- CUADRO ABAJO DERECHA -->
     <div class="art-frame bottom-right">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/300px-1665_Girl_with_a_Pearl_Earring.jpg" alt="La joven de la perla">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8e2de2;" />
+                    <stop offset="100%" style="stop-color:#4a00e0;" />
+                </linearGradient>
+            </defs>
+            <rect width="300" height="400" fill="url(#g4)"/>
+            <polygon points="150,50 250,320 50,320" fill="#ff007f" opacity="0.7"/>
+            <circle cx="150" cy="180" r="35" fill="#00d2ff"/>
+        </svg>
     </div>
 
 </body>
