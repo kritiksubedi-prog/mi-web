@@ -20,6 +20,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #212529;
             overflow-x: hidden;
+            position: relative;
         }
 
         /* --- MENÚ SUPERIOR FIJO (STICKY NAVBAR) --- */
@@ -180,6 +181,36 @@
         .top-right { top: 6%; right: 4%; width: 260px; height: 210px; transform: rotate(10deg); border: 8px solid #d4af37; }
         .bottom-left { bottom: 6%; left: 3%; width: 200px; height: 280px; transform: rotate(-8deg); border: 8px solid #1a1a1a; }
         .bottom-right { bottom: 6%; right: 3%; width: 210px; height: 270px; transform: rotate(12deg); border: 8px solid #c5a059; }
+
+        /* --- TARJETAS LATERALES FLOTANTES --- */
+        .foto-lateral {
+            position: absolute;
+            width: 210px;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            z-index: 50;
+        }
+
+        .foto-lateral img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .foto-lateral p {
+            font-size: 0.82rem;
+            color: #333;
+            margin-top: 8px;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .foto-izquierda { left: 35px; }
+        .foto-derecha { right: 35px; }
 
         /* --- CONTENEDORES --- */
         .content-container {
@@ -423,6 +454,13 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* Ocultar fotos laterales en pantallas pequeñas para que no molesten en móviles */
+        @media (max-width: 1250px) {
+            .foto-lateral {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .art-frame { width: 110px !important; height: 140px !important; }
             .fixed-navbar { padding: 12px 15px; }
@@ -475,6 +513,22 @@
         <div class="art-frame bottom-left"><img src="images (2).jpg" alt="Cuadro 3"></div>
         <div class="art-frame bottom-right"><img src="images (3).jpg" alt="Cuadro 4"></div>
     </section>
+
+    <!-- FOTOS LATERALES FLOTANTES (Se ven al hacer scroll en ordenadores) -->
+    <div class="foto-lateral foto-izquierda" style="top: 130vh;">
+        <img src="WhatsApp Image 2026-10-11 at 22.44.56.jpeg" alt="Imprimiendo buzones">
+        <p>🖨️ La impresora 3D dando forma al punto de recogida físico</p>
+    </div>
+
+    <div class="foto-lateral foto-derecha" style="top: 190vh;">
+        <img src="WhatsApp Image 2026-10-11 at 22.44.56 (1).jpeg" alt="Programando web">
+        <p>💻 Mi estación de creación: aquí es donde programo la web</p>
+    </div>
+
+    <div class="foto-lateral foto-izquierda" style="top: 260vh;">
+        <img src="image_d35f88.png" alt="Kritik">
+        <p>👋 ¡Hola! Soy Kritik, el creador del proyecto</p>
+    </div>
 
     <!-- CONTENIDOS -->
     <main class="content-container">
@@ -610,7 +664,7 @@
     </footer>
 
     <!-- BOTÓN OUTLOOK FLOTANTE -->
-    <a href="mailto:kritik.subedi@campus.xaloc.org" class="outlook-float" title="Enviar correo a kritik.subedi@campus.xaloc.org">
+    <a href="mailto:kritiksubedi@campus.xaloc.org" class="outlook-float" title="Enviar correo">
         <svg viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
