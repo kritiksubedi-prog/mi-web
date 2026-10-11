@@ -26,7 +26,7 @@
         .title-container {
             text-align: center;
             z-index: 10;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .title-container h1 {
@@ -36,17 +36,19 @@
             text-transform: uppercase;
             line-height: 1.1;
             font-weight: 900;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
         /* CUADROS EN LAS ESQUINAS */
         .art-frame {
             position: absolute;
             border: 8px solid #3a2a1d;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-            background: #fff;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            animation: float 4s ease-in-out infinite alternate;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .art-frame img {
@@ -58,69 +60,60 @@
 
         .art-frame:hover {
             transform: scale(1.08) rotate(0deg) !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
             z-index: 20;
         }
 
         /* 1. Esquina superior izquierda */
         .top-left {
-            top: 5%;
+            top: 4%;
             left: 3%;
-            width: 220px;
-            height: 180px;
-            transform: rotate(-15deg);
+            width: 210px;
+            height: 170px;
+            transform: rotate(-14deg);
             border-color: #8b5a2b;
         }
 
         /* 2. Esquina superior derecha */
         .top-right {
-            top: 5%;
+            top: 4%;
             right: 3%;
-            width: 260px;
-            height: 200px;
-            transform: rotate(12deg);
+            width: 240px;
+            height: 190px;
+            transform: rotate(11deg);
             border-color: #d4af37;
-            animation-delay: 1s;
         }
 
         /* 3. Esquina inferior izquierda (Mona Lisa) */
         .bottom-left {
             bottom: -2%;
             left: 2%;
-            width: 180px;
-            height: 240px;
-            transform: rotate(-10deg);
-            border: 4px solid #1a1a1a;
-            animation-delay: 2s;
+            width: 170px;
+            height: 230px;
+            transform: rotate(-9deg);
+            border-color: #1a1a1a;
         }
 
         /* 4. Esquina inferior derecha (Chica de la perla) */
         .bottom-right {
             bottom: -2%;
             right: 2%;
-            width: 200px;
-            height: 260px;
-            transform: rotate(14deg);
+            width: 180px;
+            height: 240px;
+            transform: rotate(13deg);
             border-color: #c5a059;
-            animation-delay: 1.5s;
         }
 
-        /* ANIMACIONES */
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
+            from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes float {
-            0% { translateY(0px); }
-            100% { translateY(-10px); }
         }
 
         /* Adaptación para móviles */
         @media (max-width: 768px) {
             .art-frame {
-                width: 120px !important;
-                height: 140px !important;
+                width: 110px !important;
+                height: 130px !important;
             }
         }
     </style>
@@ -129,12 +122,12 @@
 
     <!-- CUADRO ARRIBA IZQUIERDA -->
     <div class="art-frame top-left">
-        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500" alt="Arte Expresionista">
+        <img src="https://picsum.photos/id/1025/400/300" alt="Arte Pinta">
     </div>
 
     <!-- CUADRO ARRIBA DERECHA -->
     <div class="art-frame top-right">
-        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500" alt="Paisaje Artístico">
+        <img src="https://picsum.photos/id/1062/400/300" alt="Flores Arte">
     </div>
 
     <!-- TÍTULO CENTRADO EXACTO -->
@@ -144,12 +137,12 @@
 
     <!-- CUADRO ABAJO IZQUIERDA (MONA LISA) -->
     <div class="art-frame bottom-left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/405px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Mona Lisa">
+        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=400" alt="Mona Lisa">
     </div>
 
     <!-- CUADRO ABAJO DERECHA (LA JOVEN DE LA PERLA) -->
     <div class="art-frame bottom-right">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/400px-1665_Girl_with_a_Pearl_Earring.jpg" alt="La joven de la perla">
+        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=400" alt="La joven de la perla">
     </div>
 
 </body>
