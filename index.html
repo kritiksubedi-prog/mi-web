@@ -216,42 +216,6 @@
         .foto-izquierda { left: 35px; }
         .foto-derecha { right: 35px; }
 
-        /* --- ANIMACIÓN MANO SALUDANDO Y BRILLI-BRILLI --- */
-        .hand-wave {
-            display: inline-block;
-            animation: waveAnimation 1.2s infinite;
-            transform-origin: 70% 70%;
-        }
-
-        @keyframes waveAnimation {
-            0% { transform: rotate(0deg); }
-            20% { transform: rotate(14deg); }
-            40% { transform: rotate(-8deg); }
-            60% { transform: rotate(14deg); }
-            80% { transform: rotate(-4deg); }
-            100% { transform: rotate(0deg); }
-        }
-
-        .sparkle-card {
-            position: relative;
-            border: 2px solid #ffd700 !important;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 0 8px 25px rgba(0,0,0,0.15) !important;
-        }
-
-        .sparkle-card::after {
-            content: "✨";
-            position: absolute;
-            top: -12px;
-            right: -10px;
-            font-size: 24px;
-            animation: sparkleAnim 1.5s infinite alternate;
-        }
-
-        @keyframes sparkleAnim {
-            0% { transform: scale(0.8) rotate(0deg); opacity: 0.6; }
-            100% { transform: scale(1.2) rotate(20deg); opacity: 1; }
-        }
-
         /* --- CONTENEDORES --- */
         .content-container {
             max-width: 1100px;
@@ -609,19 +573,13 @@
 
     <!-- FOTOS LATERALES FLOTANTES -->
     <div class="foto-lateral foto-izquierda" style="top: 130vh;">
-        <img src="WhatsApp%20Image%202026-10-11%20at%2022.44.56.jpeg" alt="Imprimiendo buzones">
+        <img src="WhatsApp Image 2026-10-11 at 22.44.56.jpeg" alt="Imprimiendo buzones">
         <p>🖨️ La impresora 3D dando forma al punto de recogida físico</p>
     </div>
 
     <div class="foto-lateral foto-derecha" style="top: 190vh;">
-        <img src="WhatsApp%20Image%202026-10-11%20at%2022.44.56%20(1).jpeg" alt="Programando web">
+        <img src="WhatsApp Image 2026-10-11 at 22.44.56 (1).jpeg" alt="Programando web">
         <p>💻 Mi estación de creación: aquí es donde programo la web</p>
-    </div>
-
-    <!-- TU FOTO CON BRILLI-BRILLI Y MANO SALUDANDO -->
-    <div class="foto-lateral foto-izquierda sparkle-card" style="top: 260vh;">
-        <img src="208659ad-b6cf-4baa-a69a-572cc9da1f76.jpg" alt="Kritik">
-        <p><span class="hand-wave">👋</span> ¡Hola! Soy Kritik, el creador del proyecto</p>
     </div>
 
     <!-- CONTENIDOS -->
@@ -776,20 +734,20 @@
                 <h2>💻 ¿Cómo he montado esta página web?</h2>
             </header>
             <div class="card-body">
-                <p>¡Hacer esta web ha sido un curro guapo! Para que veas que no hace falta ser un hacker de película, te cuento cómo la he levantado paso a paso:</p>
+                <p>¡Hacer esta web ha sido un trabajo fantástico! Para explicar cómo la he levantado paso a paso:</p>
                 
                 <div class="steps-grid" style="margin-top: 20px;">
                     <div class="step-box" style="text-align: left;">
                         <h3 style="color: #ff4d4d; margin-bottom: 8px;">🎨 Diseño y Colores</h3>
-                        <p>He escrito el código desde cero para ordenar las secciones con tarjetas bonitas, botones que cambian de color al pasar el ratón y un menú arriba del todo que se queda fijo para moverte rápido por la página.</p>
+                        <p>Diseñado el código para ordenar las secciones con tarjetas, botones interactivos y un menú superior fijo para una navegación fluida.</p>
                     </div>
                     <div class="step-box" style="text-align: left;">
-                        <h3 style="color: #ff4d4d; margin-bottom: 8px;">🧊 El Buzón 3D que gira solo</h3>
-                        <p>Para meter el buzón en 3D y que gire sin parar, he usado un código especial de Google (llamado <code>model-viewer</code>) que lee el archivo 3D del buzón y deja que cualquiera lo mueva con el dedo o el ratón.</p>
+                        <h3 style="color: #ff4d4d; margin-bottom: 8px;">🧊 El Buzón 3D Interactiva</h3>
+                        <p>Uso del componente <code>model-viewer</code> de Google que lee el archivo 3D del buzón y permite a los usuarios interactuar con él.</p>
                     </div>
                     <div class="step-box" style="text-align: left;">
-                        <h3 style="color: #ff4d4d; margin-bottom: 8px;">🚀 Publicarla en Internet (GitHub)</h3>
-                        <p>He subido todos los archivos a GitHub, que es la plataforma donde se guardan los proyectos de programación, para que la web funcione online y la pueda ver todo el mundo desde el enlace.</p>
+                        <h3 style="color: #ff4d4d; margin-bottom: 8px;">🚀 Publicación en Internet (GitHub)</h3>
+                        <p>Despliegue de los archivos del proyecto en GitHub Pages para ofrecer un sitio accesible online.</p>
                     </div>
                 </div>
             </div>
@@ -838,7 +796,6 @@
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
     </a>
-    
+
 </body>
-    
 </html>
