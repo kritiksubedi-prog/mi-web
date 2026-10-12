@@ -121,7 +121,7 @@
             color: #ff4d4d;
         }
 
-        /* --- SECCIÓN PORTADA --- */
+        /* --- SECCIÓN PORTADA CON FONDO DE MUSEO --- */
         .hero-section {
             min-height: 100vh;
             display: flex;
@@ -129,7 +129,11 @@
             align-items: center;
             position: relative;
             margin-top: 50px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            /* Aquí cargamos la foto que has subido. He ajustado el CSS para que los textos negros se lean bien sobre el fondo oscuro */
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('WhatsApp Image 2026-10-11 at 22.44.56 (2).jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .title-container {
@@ -141,6 +145,7 @@
         .title-container h1 {
             font-family: 'Impact', sans-serif;
             font-size: clamp(3.5rem, 9vw, 7.5rem);
+            /* He puesto el título principal en negro para que resalte mucho sobre el fondo */
             color: #111111;
             letter-spacing: 6px;
             text-transform: uppercase;
@@ -149,6 +154,7 @@
 
         .title-container p {
             font-size: 1.15rem;
+            /* Mantengo el subtítulo en rojo, se ve guay sobre la foto */
             color: #ff4d4d;
             margin-top: 12px;
             letter-spacing: 2px;
@@ -158,7 +164,7 @@
 
         .art-frame {
             position: absolute;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.38);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             overflow: hidden;
             display: flex;
@@ -177,7 +183,7 @@
 
         .art-frame:hover {
             transform: scale(1.08) rotate(0deg) !important;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.28);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.48);
             z-index: 20;
         }
 
@@ -557,7 +563,7 @@
         </ul>
     </nav>
 
-    <!-- PORTADA -->
+    <!-- PORTADA CON FONDO DE MUSEO Y AJUSTE DE COLOR DE TEXTO -->
     <section class="hero-section">
         <div class="art-frame top-left"><img src="images.jpg" alt="Cuadro 1"></div>
         <div class="art-frame top-right"><img src="images (1).jpg" alt="Cuadro 2"></div>
