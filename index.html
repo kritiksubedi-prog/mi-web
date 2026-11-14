@@ -6,7 +6,7 @@
     <title>Arte en Acción | Proyecto PAI 1º y 2º ESO</title>
     
     <!-- Importar el visor 3D de Google -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 
     <style>
         * {
@@ -129,11 +129,7 @@
             align-items: center;
             position: relative;
             margin-top: 50px;
-            /* Aquí cargamos la foto que has subido. He ajustado el CSS para que los textos negros se lean bien sobre el fondo oscuro */
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('WhatsApp Image 2026-10-11 at 22.44.56 (2).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: #e9ecef;
         }
 
         .title-container {
@@ -528,6 +524,10 @@
             .nav-link-btn { padding: 6px 12px; font-size: 0.8rem; }
             .bordered-card { padding: 25px; }
         }
+
+        @media (hover: none) {
+            .dropdown { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -565,16 +565,16 @@
 
     <!-- PORTADA CON FONDO DE MUSEO Y AJUSTE DE COLOR DE TEXTO -->
     <section class="hero-section">
-        <div class="art-frame top-left"><img src="images.jpg" alt="Cuadro 1"></div>
-        <div class="art-frame top-right"><img src="images (1).jpg" alt="Cuadro 2"></div>
+        <div class="art-frame top-left"><img src="images.jpg" alt=""></div>
+        <div class="art-frame top-right"><img src="images (1).jpg" alt=""></div>
         
         <div class="title-container">
             <h1>ARTE<br>EN ACCIÓN</h1>
             <p>Buzones Artísticos • 1º y 2º ESO</p>
         </div>
 
-        <div class="art-frame bottom-left"><img src="images (2).jpg" alt="Cuadro 3"></div>
-        <div class="art-frame bottom-right"><img src="images (3).jpg" alt="Cuadro 4"></div>
+        <div class="art-frame bottom-left"><img src="images (2).jpg" alt=""></div>
+        <div class="art-frame bottom-right"><img src="images (3).jpg" alt=""></div>
     </section>
 
     <!-- FOTOS LATERALES FLOTANTES -->
@@ -745,15 +745,15 @@
                 <div class="steps-grid" style="margin-top: 20px;">
                     <div class="step-box" style="text-align: left;">
                         <h3 style="color: #ff4d4d; margin-bottom: 8px;">🎨 Diseño y Colores</h3>
-                        <p>Diseñado el código para ordenar las secciones con tarjetas, botones interactivos y un menú superior fijo para una navegación fluida.</p>
+                        <p>He diseñado el código para ordenar las secciones con tarjetas, botones interactivos y un menú superior fijo que facilita la navegación.</p>
                     </div>
                     <div class="step-box" style="text-align: left;">
-                        <h3 style="color: #ff4d4d; margin-bottom: 8px;">🧊 El Buzón 3D Interactiva</h3>
-                        <p>Uso del componente <code>model-viewer</code> de Google que lee el archivo 3D del buzón y permite a los usuarios interactuar con él.</p>
+                        <h3 style="color: #ff4d4d; margin-bottom: 8px;">🧊 El buzón 3D interactivo</h3>
+                        <p>He usado el componente <code>model-viewer</code> de Google, que lee el archivo 3D del buzón y permite a cualquiera girarlo y hacer zoom.</p>
                     </div>
                     <div class="step-box" style="text-align: left;">
                         <h3 style="color: #ff4d4d; margin-bottom: 8px;">🚀 Publicación en Internet (GitHub)</h3>
-                        <p>Despliegue de los archivos del proyecto en GitHub Pages para ofrecer un sitio accesible online.</p>
+                        <p>He publicado los archivos del proyecto en GitHub Pages para que la web sea accesible online.</p>
                     </div>
                 </div>
             </div>
@@ -792,12 +792,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Kritik Subedi — Proyecto Arte en Acción (PAI 1º y 2º ESO). Todos los derechos reservados.</p>
+            <p>&copy; 2026 Kritik Subedi — Proyecto Arte en Acción (PAI 1º y 2º ESO). Las obras pertenecen a sus autores.</p>
         </div>
     </footer>
 
     <!-- BOTÓN OUTLOOK FLOTANTE -->
-    <a href="mailto:kritiksubedi@campus.xaloc.org" class="outlook-float" title="Enviar correo">
+    <a href="mailto:kritik.subedi@campus.xaloc.org" class="outlook-float" title="Enviar correo">
         <svg viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
