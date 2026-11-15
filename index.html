@@ -506,6 +506,102 @@
             fill: white;
         }
 
+
+        /* --- CAPAS MAXIMALISTAS: PEGATINAS, MARCOS Y TEXTURAS --- */
+        body::before {
+            content: "✦";
+            position: fixed; top: 18%; left: 1.5%;
+            color: rgba(255,77,77,.13); font-size: 8rem;
+            transform: rotate(-18deg); pointer-events: none; z-index: -1;
+        }
+        body::after {
+            content: "ART CLUB • CREATE • SHARE • INSPIRE";
+            position: fixed; right: -92px; top: 48%;
+            transform: rotate(90deg); transform-origin: center;
+            color: rgba(33,37,41,.12); font-weight: 900;
+            letter-spacing: 5px; font-size: .72rem;
+            pointer-events: none; z-index: -1;
+        }
+        .hero-sticker {
+            position: absolute; z-index: 30; padding: 12px 18px;
+            background: #ffe66d; color: #212529; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 1px;
+            border: 3px solid #212529; box-shadow: 5px 6px 0 #212529;
+            transform: rotate(-9deg); left: 27%; bottom: 16%;
+        }
+        .hero-sticker.alt {
+            left: auto; right: 25%; top: 18%; bottom: auto;
+            background: #b8f2e6; transform: rotate(8deg);
+        }
+        .ticker {
+            overflow: hidden; white-space: nowrap; background: #ff4d4d;
+            color: white; border-top: 3px solid #212529;
+            border-bottom: 3px solid #212529; padding: 13px 0;
+            font-family: Impact, sans-serif; font-size: 1.25rem;
+            letter-spacing: 2px; transform: rotate(-1deg) scale(1.02);
+            box-shadow: 0 7px 0 rgba(33,37,41,.12);
+        }
+        .ticker span { display: inline-block; padding-left: 100%; animation: tickerMove 24s linear infinite; }
+        @keyframes tickerMove { to { transform: translateX(-100%); } }
+        .eyebrow-tag {
+            display: inline-block; background: #ffe66d; color: #212529;
+            border: 2px solid #212529; padding: 5px 12px;
+            font-weight: 900; text-transform: uppercase; letter-spacing: 1px;
+            transform: rotate(-2deg); margin-bottom: 14px;
+            box-shadow: 3px 3px 0 #212529;
+        }
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+            gap: 18px; margin-top: 25px;
+        }
+        .feature-tile {
+            min-height: 175px; padding: 23px; border: 2px solid #212529;
+            border-radius: 15px; box-shadow: 6px 7px 0 #212529;
+            transition: transform .25s ease;
+        }
+        .feature-tile:hover { transform: translate(-3px,-4px) rotate(-1deg); }
+        .feature-tile:nth-child(1) { background: #ffe6e6; }
+        .feature-tile:nth-child(2) { background: #e2f0cb; }
+        .feature-tile:nth-child(3) { background: #d7e9ff; }
+        .feature-tile:nth-child(4) { background: #fff1bd; }
+        .feature-icon { font-size: 2.2rem; display: block; margin-bottom: 12px; }
+        .feature-tile h3 { font-family: Impact,sans-serif; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 8px; }
+        .feature-tile p { color: #495057; font-size: .94rem; line-height: 1.5; }
+        .week-strip {
+            display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 25px;
+        }
+        .week-step {
+            background: #212529; color: white; border-radius: 12px;
+            padding: 20px; text-align: center; border-bottom: 6px solid #ff4d4d;
+        }
+        .week-step strong { display:block; color:#ffe66d; font-family:Impact,sans-serif; font-size:1.35rem; margin-bottom:7px; }
+        .week-step p { color:#f1f3f5; font-size:.92rem; }
+        .quote-card {
+            margin: 35px auto 10px; max-width: 850px; padding: 30px;
+            background: #ffe66d; color: #212529; border: 3px solid #212529;
+            border-radius: 8px; box-shadow: 8px 8px 0 #ff4d4d;
+            text-align: center; transform: rotate(-1deg);
+            font-family: Impact,sans-serif; font-size: clamp(1.3rem,3vw,2rem);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .gallery-item:nth-child(1) { transform: rotate(-1.5deg); }
+        .gallery-item:nth-child(2) { transform: translateY(8px) rotate(1deg); }
+        .gallery-item:nth-child(3) { transform: rotate(-.8deg); }
+        .gallery-item { box-shadow: 4px 5px 0 #dee2e6; }
+        .gallery-placeholder { background: repeating-linear-gradient(135deg,#f1f3f5,#f1f3f5 12px,#e9ecef 12px,#e9ecef 24px); color:#495057; }
+        .bordered-card:nth-of-type(even) { background-image: radial-gradient(#ff4d4d 0.65px, transparent 0.65px); background-size: 17px 17px; }
+        .bordered-card:nth-of-type(even) > * { background-color: #fff; }
+        @media (max-width: 700px) {
+            .hero-sticker { left: 8%; bottom: 10%; font-size: .72rem; }
+            .hero-sticker.alt { right: 7%; top: 13%; }
+            .week-strip { grid-template-columns: 1fr; }
+            .ticker { font-size: 1rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ticker span { animation: none; padding-left: 0; }
+            html { scroll-behavior: auto; }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
@@ -565,10 +661,14 @@
             <h1>ARTE<br>EN ACCIÓN</h1>
             <p>Buzón Artístico • 1º ESO</p>
         </div>
+        <div class="hero-sticker">¡Tu arte tiene sitio!</div>
+        <div class="hero-sticker alt">Edición escolar ✦</div>
 
         <div class="art-frame bottom-left"><img src="images (2).jpg" alt=""></div>
         <div class="art-frame bottom-right"><img src="images (3).jpg" alt=""></div>
     </section>
+
+    <div class="ticker" aria-label="Lema del proyecto"><span>✦ CREA · PARTICIPA · COMPARTE · INSPIRA · CADA IDEA CUENTA · ARTE EN ACCIÓN · ✦ CREA · PARTICIPA · COMPARTE · INSPIRA · CADA IDEA CUENTA · ARTE EN ACCIÓN ·</span></div>
 
     <!-- FOTOS LATERALES FLOTANTES -->
     <div class="foto-lateral foto-izquierda" style="top: 130vh;">
@@ -590,7 +690,7 @@
                 <h2>¿Qué es Arte en Acción?</h2>
             </header>
             <div class="card-body">
-                <p><strong>Arte en Acción</strong> es una iniciativa creativa diseñada para dar visibilidad al talento artístico de los alumnado de <strong>1º de ESO</strong> en nuestro colegio.</p>
+                <p><strong>Arte en Acción</strong> es una iniciativa creativa diseñada para dar visibilidad al talento artístico de el alumnado de <strong>1º de ESO</strong> en nuestro colegio.</p>
                 <p>A través de un único buzón físico situado en el pasillo de 1º de ESO, recibimos obras artísticas en papel. Cada viernes se recogen, se revisan junto con un profesor y, con la autorización del colegio, se digitalizan para mostrar las obras seleccionadas con seudónimos.</p>
             </div>
         </article>
@@ -733,6 +833,37 @@
             </div>
         </article>
 
+
+        <!-- NUEVA SECCIÓN: FORMATOS CREATIVOS -->
+        <article class="bordered-card" id="universo-creativo">
+            <span class="eyebrow-tag">✦ Tu imaginación manda</span>
+            <header class="card-header"><h2>Un universo de formas de crear</h2></header>
+            <div class="card-body">
+                <p>No hace falta dibujar de una única manera. Lo importante es participar con una creación propia en papel y respetar el formato A4.</p>
+                <div class="feature-grid">
+                    <div class="feature-tile"><span class="feature-icon">✏️</span><h3>Ilustración</h3><p>Personajes, paisajes, mundos inventados y escenas cotidianas.</p></div>
+                    <div class="feature-tile"><span class="feature-icon">📚</span><h3>Cómic y manga</h3><p>Historias en viñetas, expresiones, diálogos y aventuras.</p></div>
+                    <div class="feature-tile"><span class="feature-icon">🧩</span><h3>Collage</h3><p>Composiciones con recortes, formas, texturas y materiales sobre papel.</p></div>
+                    <div class="feature-tile"><span class="feature-icon">🖌️</span><h3>Pintura y letras</h3><p>Acuarela, témpera, lettering, caligrafía y experimentación visual.</p></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- NUEVA SECCIÓN: RITMO SEMANAL -->
+        <article class="bordered-card" id="ritmo-semanal">
+            <span class="eyebrow-tag">✦ Cada viernes</span>
+            <header class="card-header"><h2>El ritmo de Arte en Acción</h2></header>
+            <div class="card-body">
+                <p>El proyecto sigue un ciclo semanal sencillo. El podio y el cartel se mantienen durante toda la semana y se actualizan en la siguiente revisión.</p>
+                <div class="week-strip">
+                    <div class="week-step"><strong>01 · ENTREGA</strong><p>Durante la semana, deja tu obra A4 en el buzón del pasillo de 1º de ESO.</p></div>
+                    <div class="week-step"><strong>02 · REVISIÓN</strong><p>El viernes, las obras se recogen y se revisan con un profesor.</p></div>
+                    <div class="week-step"><strong>03 · ACTUALIZACIÓN</strong><p>Tras la revisión y las autorizaciones necesarias, se prepara el podio y el cartel.</p></div>
+                </div>
+                <div class="quote-card">No se trata solo de ganar. Se trata de atreverse a crear.</div>
+            </div>
+        </article>
+
     </main>
 
     <!-- FOOTER -->
@@ -747,6 +878,8 @@
                 <ul>
                     <li><a href="#proyecto">Sobre el Proyecto</a></li>
                     <li><a href="#pasos">Cómo Participar</a></li>
+                    <li><a href="#universo-creativo">Ideas para crear</a></li>
+                    <li><a href="#ritmo-semanal">Ritmo semanal</a></li>
                     <li><a href="#buzon3d">Diseño 3D</a></li>
                     <li><a href="#creacion-web">Cómo hice la web</a></li>
                     <li><a href="#eso1">Buzón 1º ESO</a></li>
