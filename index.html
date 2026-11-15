@@ -783,29 +783,52 @@
             </div>
         </article>
 
-        <!-- LABORATORIO 3D -->
-        <article class="bordered-card" id="buzon3d" style="padding:clamp(14px,3vw,30px);background:#e9edf4;">
-          <section class="buzon-lab">
-            <div class="lab-topline"><div class="lab-kicker">ARTE EN ACCIÓN / INGENIERÍA Y DISEÑO</div><div class="lab-status">● VISOR 3D INTERACTIVO</div></div>
-            <h2 class="lab-heading">Del diseño<br><span>a la realidad.</span></h2>
-            <p class="lab-intro">Este es el concepto tridimensional del buzón artístico. Explora el modelo desde distintos ángulos y descubre cómo se organiza el punto de recogida de las obras de 1.º de ESO.</p>
-            <div class="lab-layout">
-              <div class="model-stage">
-                <div class="stage-label">MODELO DIGITAL · BUZÓN A4</div><div class="stage-corner">3D / PREVIEW<br>ARRASTRA PARA GIRAR</div>
-                <model-viewer id="buzon-modelo" src="buzon.glb" alt="Modelo tridimensional del buzón artístico" camera-controls auto-rotate rotation-per-second="22deg" shadow-intensity="1.1" exposure="1.05" environment-image="neutral" camera-orbit="35deg 72deg 2.7m" min-camera-orbit="auto auto 1.5m" max-camera-orbit="auto auto 6m" interaction-prompt="auto" style="background:transparent;"></model-viewer>
-                <div class="model-controls">
-                  <button type="button" onclick="buzonVista('35deg 72deg 2.7m')">◉ Vista general</button><button type="button" onclick="buzonVista('0deg 85deg 2.7m')">▣ Frontal</button><button type="button" onclick="buzonVista('90deg 75deg 2.7m')">↻ Lateral</button><button type="button" onclick="buzonRotacion()">⏯ Girar / Pausar</button>
+        <!-- TARJETA 5: MODELO 3D Y DESGLOSE INTERACTIVO CON FLECHAS -->
+        <article class="bordered-card" id="buzon3d">
+            <header class="card-header">
+                <h2>🖨️ Diseño 3D del Buzón</h2>
+            </header>
+            <div class="card-body" style="text-align: center;">
+                <p>Este es el modelo tridimensional interactivo del buzón diseñado para la impresión 3D. ¡Gira de forma continua!</p>
+                
+                <!-- VISOR 3D QUE GIRA SOLO -->
+                <model-viewer 
+                    src="buzon.glb" 
+                    alt="Modelo 3D del Buzón" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 400px; background-color: #f1f3f5; border-radius: 12px; border: 2px solid #e0e0e0; margin-top: 20px;">
+                </model-viewer>
+
+                <p style="font-size: 0.85rem; color: #6c757d; margin-top: 10px;">💡 <em>Haz clic y arrastra con el ratón para rotar el buzón o hacer zoom.</em></p>
+
+                <!-- INFOGRAFÍA Y DESGLOSE CON FLECHAS HACIA ABAJO -->
+                <div class="infographic-container">
+                    
+                    <div class="arrow-down-indicator">⬇️</div>
+                    
+                    <div class="part-card ranura">
+                        <h3>🟢 1. Ranura Superior (Acceso de Dibujos)</h3>
+                        <p>Diseñada para que el alumnado de 1º de ESO introduzca sus obras en papel A4 sin doblarlas.</p>
+                    </div>
+
+                    <div class="arrow-down-indicator">⬇️</div>
+
+                    <div class="part-card cuerpo">
+                        <h3>🔴 2. Cuerpo Principal del Buzón</h3>
+                        <p>Estructura central sólida e impresa en 3D que almacena de forma segura los trabajos artísticos depositados cada semana.</p>
+                    </div>
+
+                    <div class="arrow-down-indicator">⬇️</div>
+
+                    <div class="part-card pestillo">
+                        <h3>🔵 3. Sistema de Cierre / Pestillo Lateral</h3>
+                        <p>Sistema de cierre para que solo el responsable autorizado pueda abrir el buzón durante la recogida.</p>
+                    </div>
+
                 </div>
-              </div>
-              <aside class="model-side">
-                <div class="model-info"><div class="info-index">01 / ENTRADA</div><h3>Ranura para las obras</h3><p>La abertura superior está pensada para introducir trabajos en papel A4 sin tener que doblarlos.</p></div>
-                <div class="model-info"><div class="info-index">02 / ESTRUCTURA</div><h3>Cuerpo del buzón</h3><p>La carcasa impresa en 3D forma el volumen principal donde se depositan y guardan las participaciones.</p></div>
-                <div class="model-info"><div class="info-index">03 / ACCESO</div><h3>Recogida controlada</h3><p>El diseño contempla un sistema de apertura para la retirada de las obras por la persona responsable, pendiente de validar en el montaje final.</p></div>
-              </aside>
+
             </div>
-            <div class="lab-specs"><div class="lab-spec"><strong>Formato A4</strong><span>El proyecto acepta obras de 21 × 29,7 cm.</span></div><div class="lab-spec"><strong>Impresión 3D</strong><span>Un objeto físico diseñado digitalmente y fabricado por capas.</span></div><div class="lab-spec"><strong>Uso escolar</strong><span>Un punto de entrega para las participaciones de 1.º de ESO.</span></div></div>
-            <div class="lab-note">💡 <strong>Cómo explorar:</strong> arrastra el modelo con el ratón o el dedo para girarlo; usa la rueda o el gesto de pellizcar para acercar y alejar. Los botones cambian el punto de vista.</div>
-          </section>
         </article>
 
         <!-- TARJETA 6: CÓMO HE CREADO ESTA PÁGINA WEB -->
